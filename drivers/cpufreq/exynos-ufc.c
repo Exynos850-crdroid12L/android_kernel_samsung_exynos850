@@ -59,6 +59,8 @@ static int ucc_requested_val;
 
 #define DEFAULT_LEVEL 0
 
+
+#define SUSTAINABLE_FREQ 2002000
 /*********************************************************************
  *                          HELPER FUNCTION                           *
  *********************************************************************/
@@ -589,6 +591,9 @@ static ssize_t ufc_store_cpufreq_min_limit(struct kobject *kobj,
 	if (!sscanf(buf, "%8d", &input))
 		return -EINVAL;
 
+	if (input < SUSTAINABLE_FREQ && input != -1)
+		input = SUSTAINABLE_FREQ;
+	
 	/* Save the input for sse change */
 	ufc.last_min_input = input;
 
