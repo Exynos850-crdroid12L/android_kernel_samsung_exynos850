@@ -7,6 +7,8 @@
 * CPU: Default CPUFREQ Governor: SCHEDUTIL
 * GPU: Overclocked to 1196 Mhz
 * GPU: Adaptive power policy (default)
+
+
 **Based on M127FXXU3BVG2**
 
 
